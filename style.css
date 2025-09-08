@@ -219,53 +219,70 @@ body {
   }
 }
 
+/* -------------------- BASE STATES FOR ANIMATION-------------------- */
+body {
+  opacity: 0;
+}
+
+.navbar,
+.main-image img,
+.launch-heading,
+.description p,
+.glow-strip {
+  opacity: 0;
+  transform: translateY(0);
+}
+
 /* -------------------- ANIMATIONS -------------------- */
-@keyframes fadeSlideDown {
-  0% {
+@keyframes slideDown {
+  from {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-40px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-@keyframes popUp {
-  0% {
+@keyframes fadeCenter {
+  from {
     opacity: 0;
     transform: scale(0.9);
   }
-  100% {
+  to {
     opacity: 1;
     transform: scale(1);
   }
 }
 
-@keyframes fadeUp {
-  0% {
+@keyframes bgReveal {
+  from {
     opacity: 0;
-    transform: translateY(20px);
   }
-  100% {
+  to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
 /* -------------------- APPLY ANIMATIONS -------------------- */
+body {
+  animation: bgReveal 1.2s ease-in forwards;
+}
+
 .navbar {
-  animation: fadeSlideDown 0.8s ease-out forwards;
+  animation: slideDown 0.4s ease-out forwards;
+  animation-delay: 0.1s;
 }
 
-.main-image img {
-  animation: fadeUp 1s ease-out forwards;
-}
-
-.launch-heading {
-  animation: fadeUp 1s ease-out forwards;
-}
-
+.main-image img,
+.launch-heading,
 .description p {
-  animation: fadeUp 1s ease-out forwards;
+  animation: fadeCenter 0.6s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.glow-strip {
+  animation: bgReveal 1s ease-in forwards;
+  animation-delay: 0.9s;
 }

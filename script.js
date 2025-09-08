@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
   strips.forEach(({ selector, phase }) => {
     const container = document.querySelector(selector);
     const height = window.innerHeight - startTop;
-
     const svgNS = "http://www.w3.org/2000/svg";
     const svg = document.createElementNS(svgNS, "svg");
     svg.setAttribute("width", "80");
