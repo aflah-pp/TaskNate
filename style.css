@@ -267,18 +267,18 @@ body {
 
 /* -------------------- APPLY ANIMATIONS -------------------- */
 body {
-  animation: bgReveal 1.2s ease-in forwards;
+  animation: bgReveal 0.5s ease-in forwards;
 }
 
 .navbar {
-  animation: slideDown 0.4s ease-out forwards;
-  animation-delay: 0.1s;
+  animation: slideDown 0.5s ease-out forwards;
+  animation-delay: 0.3s;
 }
 
 .main-image img,
 .launch-heading,
 .description p {
-  animation: fadeCenter 0.6s ease-out forwards;
+  animation: fadeCenter 0.5s ease-out forwards;
   animation-delay: 0.3s;
 }
 
