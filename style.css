@@ -1,0 +1,330 @@
+/* --- Base Styles --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(17, 17, 132, 0.25) 100%);
+  overflow-x: hidden;
+  opacity: 0;
+}
+
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Navbar --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  padding: 0.8rem 1.8rem;
+  max-width: 1200px;
+  margin: 40px 100px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateY(-40px);
+}
+
+.nav-logo {
+  background: #fff;
+  border-radius: 12px;
+  padding: 0.6rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 58px;
+}
+
+.nav-logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav-logo img {
+  max-height: 3em;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+}
+
+.nav-logo img:hover {
+  transform: scale(1.05);
+}
+
+.logoTalrop {
+  height: 3em;
+}
+
+.initiative-text {
+  font-family: 'Gordita-Regular', Arial, sans-serif;
+  /* font-weight: 700; */
+  font-size: 0.9rem;
+  color: #444;
+  gap: 10px;
+  margin: 0 10px 0px 0px;
+  white-space: nowrap;
+}
+
+/* --- Main Content --- */
+.main-content {
+  text-align: center;
+  padding: 0px 1rem 6rem;
+  max-width: 1200px;
+  margin: 0px auto;
+  flex: 1 1 0%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.main-image {
+  margin-bottom: 2rem;
+}
+
+.main-image img {
+  max-width: 590px;
+  width: 100%;
+  height: auto;
+  animation: 1s ease-out 0s 1 normal forwards running fadeUp;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.glow-strip {
+  position: absolute;
+  width: 7px;
+  height: 450px;
+  top: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: none;
+  opacity: 0;
+  transform: translateY(0);
+}
+
+.strip-a {
+  left: 28%;
+}
+
+.strip-n {
+  left: 50%;
+}
+
+.description p {
+  font-size: 1.15rem;
+  color: rgb(68, 68, 68);
+  margin-bottom: 15px;
+  line-height: 1.5em;
+  animation: 1s ease-out 0s 1 normal forwards running fadeUp;
+  padding: 0px;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.launch-heading {
+  font-family: 'Poppins', Georgia, serif;
+  font-size: 95px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 2rem;
+  background: radial-gradient(50% 75% at 50% 50%, #5a5aa3 0%, #111184 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+/* --- Responsive Design --- */
+/* Tablets: iPad / mid screens */
+@media (max-width: 1024px) {
+  .navbar {
+    margin: 24px 50px;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .nav-logo {
+    height: 52px;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .main-content {
+    margin-top: 2.5rem;
+    padding: 0 1.5rem 5rem;
+  }
+
+  .main-image img {
+    max-width: 480px;
+  }
+
+  .description p {
+    font-size: 1.05rem;
+    line-height: 1.45;
+  }
+
+  .launch-heading {
+    font-size: clamp(60px, 5vw, 3.5rem);
+  }
+}
+
+/* Large Mobiles: 480px–600px */
+@media (max-width: 600px) {
+  .navbar {
+    margin: 18px 30px;
+    padding: 0.5rem 1rem;
+  }
+
+  .nav-logo {
+    height: 48px;
+  }
+
+  .nav-logo img {
+    max-height: 1em;
+  }
+
+  .nav-logo .initiative-text {
+    font-size: 0.7rem;
+  }
+
+  .main-image img {
+    max-width: 320px;
+  }
+
+  .description p {
+    font-size: 1rem;
+    line-height: 1.4em;
+  }
+
+  .launch-heading {
+    font-size: clamp(40px, 8vw, 3rem);
+    margin-top: 1.2rem;
+  }
+}
+
+/* Small Mobiles: below 390px */
+@media (max-width: 390px) {
+  .navbar {
+    margin: 17px 16px;
+    padding: 0.5rem 0.8rem;
+    gap: 6px;
+  }
+
+  .nav-logo {
+    height: 47px;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .nav-logo img {
+    max-height: 1.2em;
+    width: 80px;
+  }
+
+  .nav-logo .logoTalrop {
+    height: 2em;
+    width: 30px;
+  }
+
+  .nav-logo .initiative-text {
+    font-size: 0.5rem;
+    margin: 4px;
+  }
+
+  .main-image img {
+    max-width: 260px;
+    margin: 1.2em;
+  }
+
+  .description p {
+    font-size: 0.8rem;
+    line-height: 1.3em;
+    margin-bottom: 12px;
+  }
+
+  .launch-heading {
+    font-size: 32px;
+    margin-top: 1rem;
+  }
+}
+
+/* --- Animation States & Keyframes --- */
+body {
+  opacity: 0;
+}
+
+.navbar,
+.main-image img,
+.launch-heading,
+.description p,
+.glow-strip {
+  opacity: 0;
+  transform: translateY(0);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeCenter {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bgReveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Apply Animations */
+body {
+  animation: bgReveal 0.5s ease-in forwards;
+}
+
+.navbar {
+  animation: slideDown 0.5s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.main-image img,
+.launch-heading,
+.description p {
+  animation: fadeCenter 0.5s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.glow-strip {
+  animation: bgReveal 1s ease-in forwards;
+  animation-delay: 0.9s;
+}
